@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ranking prediction</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="containers">
+            <h3 class='container-heading' style="font-family: Times New Roman, Times, serif"><span class="heading_font_1" style="font-size:30px;">JSS SCIENCE AND TECHNOLOGY UNIVERSITY<br><h4>(FORMERLY SJCE)</h4><h5>MYSURU</h5></span></h3>
+            <div><img src={{ url_for('static',filename='jss.png') }} class="img-fluid jss-logo" width="10%" height="10%" alt="Image"></div>
+    	</div>
+        <div class="description">
+                     
+    			<b><h3 style="font-family: Times New Roman, Times, serif;color:#ce55bf;">RANK &nbsp;PREDICTOR<h3></b>
+    		
+        </div>
+        <!-- Text Area -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 v1">
+					<img src="{{ url_for('static',filename='engg.png') }}" width="100" height="100"><a href="{{ url_for('engg') }}" style="font-family: Times New Roman, Times, serif;font-size:23px;" class="img-ico">&nbsp;Engineering</a><br></br>
+					<img src="{{ url_for('static',filename='uni.png') }}" width="100" height="100"><a href="{{ url_for('university') }}" style="font-family: Times New Roman, Times, serif;font-size:23px;" class="img-ico">&nbsp;University</a><br></br>
+					<img src="{{ url_for('static',filename='over.png') }}" width="100" height="100"><a href="{{ url_for('overall') }}" style="font-family: Times New Roman, Times, serif;font-size:23px;" class="img-ico">&nbsp;&nbsp;&nbsp;&nbsp;Over all</a>
+				</div>
+				<div class="col-md-4">
+					<div class="team">
+						<h3>&ensp;Team :</h3><br>
+						<h4>&emsp;Dr.Anilkumar K M</h4>
+						<h4>&emsp;Jayanth D</h4>
+						<h4>&emsp;Nandakrishna</h4>
+						<h4>&emsp;Prajith V </h4>
+						<h4>&emsp;Sangamesh K</h4>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+    	<!-- Result -->
+		<div class="results1">
+		
+				<!--<h2>{{prediction}}</h2>-->
+				<p style="visibility:hidden;">Developed by sangamesh and prajith</p>
+		
+		</div>
+         
+         
+         
+        <!-- Footer -->
+       <div class='footer'>
+           <p class='footer-description'>JSS SCIENCE AND TECHNOLOGY UNIVERSITY.</p>
+       </div>
+       
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Ranking prediction</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="containers">
+            <h2 class='container-heading'><span class="heading_font">Rank Predictor</span></h2>
+            <div class='description'>
+    			<p style="	color: #ffffff;">NIRF Ranking - Overall</p>
+    		</div>
+    		<form action="{{ url_for('index') }}">
+        		<input type="submit" class="my-cta-button home_rank" value="Home">
+    		</form>    		
+    	</div>
+
+        <div class="notes">
+		  <p><b>Instructions</b>:<br>	* Enter the scores(1-100) of each parameter in their respective text fields and check your rank .</p>
+		</div>
+    	
+    	<!-- Text Area -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 v1">
+				<div class="ml-container">
+					<form action="{{ url_for('predictOver') }}" method="POST">
+                        <label>Enter the valid score of TLR &nbsp;</label>
+						<input class="form-input" type="text" name="tlr_o" placeholder="TLR Score out of 100">  <br>
+						<label>Enter the valid score of RPC&nbsp;</label>
+						<input class="form-input" type="text" name="rpc_o" placeholder="RPC score out of 100"> <br>
+						<label>Enter the valid score of GO &nbsp;&nbsp;</label>
+						<input class="form-input" type="text" name="go_o" placeholder="GO score out of 100"> <br>
+						<label>Enter the valid score of OI &nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<input class="form-input" type="text" name="oi_o" placeholder="OI score out of 100"><br>
+						<label>Enter the valid score of PPN &nbsp;</label>
+						<input class="form-input" type="text" name="perception_o" placeholder="PERCEPTION score out of 100"> <br></br>
+				
+
+						<input type="submit" class="my-cta-button" value="Predict">
+					</form>
+				</div>
+				</div>
+				<div class="col-md-4">
+					<!--<img class="graphs"  src="{{ url_for('static',filename='engg_heatmap.jpeg') }}">-->
+					<!--<h5>Heatmap showing the importance of parameters with respect to ranks.<br>X-axis = parameters and y-axis= Ranks.</h5>-->
+					   <h4>Rank history</h4>
+					   {% for table in tables %}
+        	             {{titles[loop.index-1]}}
+        	             {{ table|safe }}
+                	   {% endfor %}
+				</div>
+			</div>
+		</div>
+    	
+    	
+    	
+    	
+    	<!-- Result -->
+		<div class="results1">
+		
+				<b><h3 style="font-family: Times New Roman, Times, serif;color:#ce55bf;">{{prediction}}</h3></b>
+		
+		</div>
+         
+         
+
+	             
+        <!-- Footer -->
+       <div class='footer'>
+           <p class='footer-description'>JSS SCIENCE AND TECHNOLOGY UNIVERSITY.</p>
+       </div>
+
+    </body>
+</html>
