@@ -138,10 +138,9 @@ body{
 	margin-bottom:40px;
 }
 .results1{
-    padding: 30px 0 0;
+        margin-top:-20px;
 	flex: 1 0 auto;
 	font-family:serif;
-	margin-top:15px;
 	margin-bottom:70px;
 }
 .danger{
