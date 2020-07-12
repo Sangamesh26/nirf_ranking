@@ -226,3 +226,7 @@ margin-left: 15px;
  display:block;
  float:left;
 }
+/* spacing between developed by and office */
+.spacing_names{
+margin-top:230px;
+}
