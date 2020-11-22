@@ -4,11 +4,11 @@ from sklearn import linear_model
 from sklearn.preprocessing import PolynomialFeatures
 import pickle
 
-data = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2017RankingEngg.csv")
-data0 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2016RankingEngg.csv")
-data2 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2018RankingEngg.csv")
-data3 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2019RankingEngg1.csv")
-data4 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2020RankingEngg.csv")
+data = pd.read_csv("2017RankingEngg.csv")
+data0 = pd.read_csv("2016RankingEngg.csv")
+data2 = pd.read_csv("2018RankingEngg.csv")
+data3 = pd.read_csv("2019RankingEngg1.csv")
+data4 = pd.read_csv("2020RankingEngg.csv")
 
 
 c0 = np.array([data0.iloc[0]])

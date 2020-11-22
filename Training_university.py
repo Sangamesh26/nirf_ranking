@@ -5,10 +5,10 @@ from sklearn.preprocessing import PolynomialFeatures
 import pickle
 
 
-data1 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2017_overall_RankingEngg.csv")
-data2 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2018_overall_RankingEngg.csv")
-data3 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2019_overall_RankingEngg.csv")
-data4 = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\2020_overall_RankingEngg.csv")
+data1 = pd.read_csv("2017_univ_RankingEngg.csv")
+data2 = pd.read_csv("2018_univ_RankingEngg.csv")
+data3 = pd.read_csv("2019_univ_RankingEngg.csv")
+data4 = pd.read_csv("2020_univ_RankingEngg.csv")
 
 c1 = np.array([data1.iloc[0]])
 for i in range(data1.shape[0]-1):
@@ -45,8 +45,8 @@ for i in range(99):
     
 test = np.array([0.3*c4[:,0]+0.3*c4[:,1]+0.2*c4[:,2]+0.1*c4[:,3]+0.1*c4[:,4]]).T
 
-dataset = np.zeros((90,10,1))
-data_next = np.zeros(90,)
+dataset = np.zeros((94,6,1))
+data_next = np.zeros(94,)
 
 for i in range(dataset.shape[0]):
     l = np.array((data_c3[i:i+dataset.shape[1]]+addable_avg[i:i+dataset.shape[1]]))
@@ -55,10 +55,10 @@ for i in range(dataset.shape[0]):
 
 for i in range(dataset.shape[0]):
     data_next[i] = data_c3[i+dataset.shape[1]]
-"""   
-model = tf.keras.models.Sequential([
+    
+"""model = tf.keras.models.Sequential([
   #tf.keras.layers.Lambda(lambda x:input_shape=[None]),
-  (tf.keras.layers.LSTM(128, return_sequences=True,input_shape=(dataset.shape[1],1))),
+  tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(128, return_sequences=True,input_shape=(dataset.shape[1],1))),
   tf.keras.layers.LSTM(64),
   tf.keras.layers.Dense(1)])
 
@@ -67,11 +67,13 @@ model.compile(loss="mean_absolute_error",
               optimizer=tf.keras.optimizers.Adam(0.001),
               metrics=["mae"])
 
-history = model.fit(x = dataset,y = data_next, epochs=1300)
+history = model.fit(x = dataset,y = data_next, epochs=1000)"""
 
-result = data_c3
+"""result = data_c3"""
 
-
+"""di = np.zeros((120,1))
+for i in range(120):
+    di[i] = i+1
     
 tes = dataset[-1]
 for i in range(20):
@@ -80,23 +82,22 @@ for i in range(20):
     tes = np.append(tes,pred)
     tes = tes[-dataset.shape[1]:]
     
-
-result = result[:-10]
+result = result[:-4]
 
 diff = result[-2]-result[-1]
 
-for i in range(40):
-    result=np.append(result,result[-1]-diff)
-""" 
+for i in range(34):
+    result=np.append(result,result[-1]-diff)"""
+    
+    
+results = pd.read_csv("results_of_university.csv")
+result1 = np.array(results.iloc[:,1])
+result = result1.reshape(result1.shape[0],1)
+
 
 di = np.zeros((150,1))
 for i in range(150):
     di[i] = i+1
-
-results = pd.read_csv("C:\\Users\\vsc\\.spyder-py3\\rankingJSS\\results_of_overall_final.csv")
-result1 = np.array(results.iloc[:,1])
-result = result1.reshape(result1.shape[0],1)
-
     
 result1 = np.array(result)
 for i in range(100):
@@ -109,7 +110,7 @@ x = poly.fit_transform(result1)
 regr.fit(x,di)
 
 
-file_name1 = "rank_model_overall.pkl"
-file_name2 = "poly_overall.pkl"
+file_name1 = "rank_model_univ.pkl"
+file_name2 = "poly_univ.pkl"
 pickle.dump(regr,open(file_name1,"wb"))
 pickle.dump(poly,open(file_name2,"wb"))
