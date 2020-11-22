@@ -5,37 +5,24 @@ import pandas as pd
 
 
 # Load the  model
-filename = 'rank_model.pkl'
-filename1= 'polynomial_transform.pkl'
+filename = 'models/rank_model.pkl'
+filename1= 'models/polynomial_transform.pkl'
 model = pickle.load(open(filename, 'rb'))
 model1=pickle.load(open(filename1,'rb'))
 
 
-filename_uni= 'poly_univ.pkl'
-filename_uni1='rank_model_univ.pkl'
+filename_uni= 'models/poly_univ.pkl'
+filename_uni1='models/rank_model_univ.pkl'
 model_uni = pickle.load(open(filename_uni, 'rb'))
 model_uni1=pickle.load(open(filename_uni1,'rb'))
 
-filename_over='poly_overall.pkl'
-filename_over1='rank_model_overall.pkl'
+filename_over='models/poly_overall.pkl'
+filename_over1='models/rank_model_overall.pkl'
 model_over = pickle.load(open(filename_over, 'rb'))
 model_over1=pickle.load(open(filename_over1,'rb'))
 
 
-class modify:
-    def find_range(self,num):
-        if num<=0:
-            return "1- 5"
-        if num-3<=0:
-            return "1 - "+str(int(num)+3)
-        if num <=25:
-            return str(int(num)-3)+" - "+str(int(num)+3)
-        if num>=25 and num<=75:
-            return str(int(num)-4)+" - "+str(int(num)+4)
-        if num>=75 and num<=136:
-            return str(int(num)-7)+" - "+str(int(num)+7)
-        else:
-            return str(int(num)-19)+" - "+str(int(num)+19)
+
 class modify1:
     def find_range(self,num):
         if num<=0:
@@ -212,27 +199,9 @@ def predict():
         go_engg_para.append(float(go))
         oi_engg_para.append(float(oi))
         ppn_engg_para.append(float(perception))
-        
-        
-
-
-        
-        lis2=[]
-        lis2.append(tlr_engg_para)
-        lis2.append(rpc_engg_para)
-        lis2.append(go_engg_para)
-        lis2.append(oi_engg_para)
-        lis2.append(ppn_engg_para)
-        #lis2.append(rank_engg_para)
-        
-        numpy_array_engg=np.array(lis2).T
-        df_engg=pd.DataFrame(numpy_array_engg)
-        df_engg.columns=['TLR','RPC','GO','OI','PPN']
-        l=[]
-        for i in range(numpy_array_engg.shape[0]):
-            l.append(i+1)
-        df_engg.index=l            
-        
+               
+        df_engg = pd.DataFrame({"TLR":tlr_engg_para,"RPC":rpc_engg_para,"GO":go_engg_para,"OI":oi_engg_para,"PPN":ppn_engg_para})
+        df_engg.index = np.arange(df_engg.shape[0])+1
         
         
         x=my_prediction[0,0]
@@ -274,28 +243,9 @@ def predictUni():
         go_uni_para.append(float(go_u))
         oi_uni_para.append(float(oi_u))
         ppn_uni_para.append(float(perception_u))
-        
-        
 
-
-        
-        lis=[]
-        lis.append(tlr_uni_para)
-        lis.append(rpc_uni_para)
-        lis.append(go_uni_para)
-        lis.append(oi_uni_para)
-        lis.append(ppn_uni_para)
-        #lis.append(rank_uni_para)
-        
-        numpy_array_uni=np.array(lis).T
-        df=pd.DataFrame(numpy_array_uni)
-        df.columns=['TLR','RPC','GO','OI','PPN']
-        l=[]
-        for i in range(numpy_array_uni.shape[0]):
-            l.append(i+1)
-        df.index=l        
-    
-
+        df = pd.DataFrame({"TLR":tlr_uni_para,"RPC":rpc_uni_para,"GO":go_uni_para,"OI":oi_uni_para,"PPN":ppn_uni_para})
+        df.index = np.arange(df.shape[0])+1
         
         if x1<=140:
             rank_uni_para.append(ranges2)
@@ -338,26 +288,9 @@ def predictOver():
         oi_over_para.append(float(oi_o))
         ppn_over_para.append(float(perception_o))
                 
+        df_over = pd.DataFrame({"TLR":tlr_over_para,"RPC":rpc_over_para,"GO":go_over_para,"OI":oi_over_para,"PPN":ppn_over_para})
+        df_over.index = np.arange(df_over.shape[0])+1
 
-
-        lis1=[]
-        lis1.append(tlr_over_para)
-        lis1.append(rpc_over_para)
-        lis1.append(go_over_para)
-        lis1.append(oi_over_para)
-        lis1.append(ppn_over_para)
-        '''lis1.append(rank_over_para)'''
-        
-        numpy_array_over=np.array(lis1).T
-        df_over=pd.DataFrame(numpy_array_over)
-        df_over.columns=['TLR','RPC','GO','OI','PPN']
-        l=[]
-        for i in range(numpy_array_over.shape[0]):
-            l.append(i+1)
-        df_over.index=l
-        
-
-                
         if x2<=140:
             rank_over_para.append(ranges3)
             df_over['RANK']=rank_over_para
