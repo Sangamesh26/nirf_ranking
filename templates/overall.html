@@ -32,7 +32,6 @@
     	<!-- Text Area -->
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 v1">
 				<div class="ml-container">
 					<form action="{{ url_for('predictOver') }}" method="POST">
                         <label>Enter the valid score of TLR &nbsp;</label>
@@ -50,15 +49,6 @@
 						<input type="submit" class="my-cta-button" value="Predict">
 					</form>
 				</div>
-				</div>
-				<div class="col-md-4">
-					<!--<img class="graphs"  src="{{ url_for('static',filename='engg_heatmap.jpeg') }}">-->
-					<!--<h5>Heatmap showing the importance of parameters with respect to ranks.<br>X-axis = parameters and y-axis= Ranks.</h5>-->
-					   <h4>Rank history</h4>
-					   {% for table in tables %}
-        	             {{titles[loop.index-1]}}
-        	             {{ table|safe }}
-                	   {% endfor %}
 				</div>
 			</div>
 		</div>
