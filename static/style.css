@@ -230,3 +230,115 @@ margin-left: 15px;
 .spacing_names{
 margin-top:230px;
 }
+
+
+
+
+
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 10% !important; /* Full-width */
+  height: 10px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 30px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius:5px;
+}
+
+.slider::-moz-range-thumb {
+  width: 30px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border-radius:5px;
+}
+.tlr_display
+{
+	display : flex;
+}
+.rpc_display
+{
+	display : flex;
+}
+.go_display
+{
+	display : flex;
+}
+.oi_display
+{
+	display : flex;
+}
+.ppn_display
+{
+	display : flex;
+}
+#myRangeTLR1,#myRangeTLR2,#myRangeTLR3,#myRangeTLR4,#myRangeTLR5,#tlr_one
+{
+	margin-left : 10%;
+}
+#myRangeRPC1,#myRangeRPC2,#myRangeRPC3,#myRangeRPC4,#myRangeRPC5,#rpc_one
+{
+	margin-left : 10%;
+}
+#myRangeGO1,#myRangeGO2,#myRangeGO3,#myRangeGO4,#myRangeGO5,#go_one
+{
+	margin-left : 10%;
+}
+#myRangeOI1,#myRangeOI2,#myRangeOI3,#myRangeOI4,#myRangeOI5,#oi_one
+{
+	margin-left : 10%;
+}
+#myRangePPN1,#myRangePPN2,#myRangePPN3,#myRangePPN4,#myRangePPN5
+{
+	margin-left : 10%;
+}
+.demo_tlr,.demo_go,.demo_oi,.demo_rpc,.demo_ppn{
+	position:relative;
+	left:-300%;
+	top:70%;
+}
+/*.demo_go{
+	position:relative;
+	left:-270%;
+	top:60%;
+}
+.demo_oi{
+	position:relative;
+	left:-270%;
+	top:60%;
+}
+.demo_rpc{
+	position:relative;
+	left:-270%;
+	top:60%;
+}
+.demo_ppn{
+	position:relative;
+	left:-270%;
+	top:60%;
+}*/
+#ppn_one
+{
+	margin-left : 39%;
+	width : 20%;
+}
