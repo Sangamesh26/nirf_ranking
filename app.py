@@ -380,19 +380,22 @@ import pandas as pd
 
 
 # Load the  model
+
+#filename = 'rank_model.pkl'
+#filename1= 'polynomial_transform.pkl'
 filename = 'models/rank_model.pkl'
 filename1= 'models/polynomial_transform.pkl'
 model = pickle.load(open(filename, 'rb'))
 model1=pickle.load(open(filename1,'rb'))
 
 
-filename_uni= 'models/poly_univ.pkl'
-filename_uni1='models/rank_model_univ.pkl'
+filename_uni= 'poly_univ.pkl'
+filename_uni1='rank_model_univ.pkl'
 model_uni = pickle.load(open(filename_uni, 'rb'))
 model_uni1=pickle.load(open(filename_uni1,'rb'))
 
-filename_over='models/poly_overall.pkl'
-filename_over1='models/rank_model_overall.pkl'
+filename_over='poly_overall.pkl'
+filename_over1='rank_model_overall.pkl'
 model_over = pickle.load(open(filename_over, 'rb'))
 model_over1=pickle.load(open(filename_over1,'rb'))
 
@@ -552,7 +555,7 @@ def predict():
         rpc = float(request.form['rpc'])
         go = float(request.form['go'])
         oi =float(request.form['oi'])
-        perception = float(request.form['perception'])
+        perception = float(request.form['ppn'])
 
         score=(tlr*0.3)+(rpc*0.3)+(go*0.2)+(oi*0.1)+(perception*0.1)
         data = np.array([score]).reshape(1,-1)
@@ -570,7 +573,7 @@ def predict():
         df_engg.index = np.arange(df_engg.shape[0])+1
         
         
-        x=my_prediction[0,0]
+        x=my_prediction[0]
         range1=modify1()
         ranges=range1.find_range(int(x))
         if x<=200:
