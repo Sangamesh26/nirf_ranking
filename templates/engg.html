@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <title>Ranking prediction</title>
-        <!--<link rel="stylesheet" type="text/css" href="{{ url_for('style.css') }}">-->
+
 	    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -162,7 +162,7 @@
 							<label class="boxHeading">Enter the valid score of PPN &nbsp;</label><br></br>
 							<div class="flex-row">
 								<p class="textTop">PR</p>
-								<input type="range" min="1" max="20" name="ppn1" class="slider" value="0" id="myRangePPN1">
+								<input type="range" min="1" max="100" name="ppn1" class="slider" value="0" id="myRangePPN1">
 							 <p class="textBelow"><span id="demo_ppn1" class="demo_ppn"></span></p>
 							</div>
 							<input type="text" name="ppn"  id="ppn_one" class = "ppn_type points">
