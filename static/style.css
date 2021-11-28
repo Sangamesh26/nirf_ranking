@@ -14,6 +14,13 @@ body{
 	flex-direction: column;
 }
 
+
+
+
+.scorer{
+	height: 30%;
+}
+
 /* Website Title */
 .containers{
     padding: 30px;
@@ -34,6 +41,11 @@ body{
 	100%{
 		background-position: 0 50%;
 	}
+}
+
+.container{
+	margin-left:0% !important;
+	width:100% !important;
 }
 
 .container-heading{
@@ -77,7 +89,15 @@ body{
 }
 
 /* Predict Button */
+
+.totsubmit{
+	display: block;
+	margin-top:20% !important;
+}
+
 .my-cta-button{
+
+
 	background: #f9f9f9;
    	border: 2px solid #000000;
     border-radius: 1000px;
@@ -241,13 +261,26 @@ margin-top:230px;
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 10% !important; /* Full-width */
+  width:100px !important; /* Full-width */
   height: 10px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
+  
+}
+
+.flexer{
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+	text-decoration-style: none;
+	width: fit-content;
+}
+
+.slider{
+	transform: rotate(270deg);
 }
 
 /* Mouse-over effects */
@@ -273,50 +306,117 @@ margin-top:230px;
   cursor: pointer; /* Cursor on hover */
   border-radius:5px;
 }
+
+.form{
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row{
+	width:20%;
+	display: flex;
+	flex-direction: column;
+}
+
+.textBelow{
+	margin-top:50px !important;
+	margin-left: 50px;
+
+}
+
+.textTop{
+	position: absolute;
+	margin-top:0;
+	top:-50px;
+
+	margin-left:40px;
+}
+
+
+
 .tlr_display
 {
-	display : flex;
+	display: flex;
+	max-width:20%;
+	position: relative;
+	margin-top: 100px;
+}
+.boxHeading{
+	position: absolute;
+	top:-80px;
+
+	width:100%;
+}
+
+.points{
+	position: absolute;
+	left:20%;
+	bottom: -40%;
+	
+	width:50% !important;
 }
 .rpc_display
 {
-	display : flex;
+	display: flex;
+	max-width:20%;
+	position: relative;
+	margin-top: 100px;
 }
 .go_display
 {
-	display : flex;
+	display: flex;
+	max-width:20%;
+	position: relative;
+	margin-top: 100px;
 }
 .oi_display
 {
-	display : flex;
+	display: flex;
+	max-width:20%;
+	position: relative;
+	margin-top: 100px;
 }
 .ppn_display
 {
 	display : flex;
+	position: relative;
+	width:20%;
+	margin-top: 100px;
 }
+.ppn_type{
+	display: block;
+	height:30px;
+}
+
 #myRangeTLR1,#myRangeTLR2,#myRangeTLR3,#myRangeTLR4,#myRangeTLR5,#tlr_one
 {
 	margin-left : 10%;
+	margin-top: 20px;
 }
 #myRangeRPC1,#myRangeRPC2,#myRangeRPC3,#myRangeRPC4,#myRangeRPC5,#rpc_one
 {
 	margin-left : 10%;
+	margin-top: 20px;
 }
 #myRangeGO1,#myRangeGO2,#myRangeGO3,#myRangeGO4,#myRangeGO5,#go_one
 {
 	margin-left : 10%;
+	margin-top: 20px;
 }
 #myRangeOI1,#myRangeOI2,#myRangeOI3,#myRangeOI4,#myRangeOI5,#oi_one
 {
 	margin-left : 10%;
+	margin-top: 20px;
 }
 #myRangePPN1,#myRangePPN2,#myRangePPN3,#myRangePPN4,#myRangePPN5
 {
 	margin-left : 10%;
+	margin-top: 20px;
 }
 .demo_tlr,.demo_go,.demo_oi,.demo_rpc,.demo_ppn{
-	position:relative;
+	/* position:relative;
 	left:-300%;
-	top:70%;
+	top:70%; */
 }
 /*.demo_go{
 	position:relative;
@@ -338,8 +438,37 @@ margin-top:230px;
 	left:-270%;
 	top:60%;
 }*/
-#ppn_one
+.ppn_one
 {
-	margin-left : 39%;
-	width : 20%;
+	/* margin-left : 39%;
+	width : 20%; */
+	margin-top:5%;
+}
+
+
+
+form{
+	display: flex ;
+	flex-direction: column ;
+}
+
+.bottomButton{
+	position: relative;
+	margin-top:5%;
+}
+
+.flex-column{
+	display: flex;
+	flex-direction: row;
+}
+
+.centerer{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+
+.prediction{
+	margin-top: 5%;
 }
